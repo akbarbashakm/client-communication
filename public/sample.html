@@ -1,0 +1,32 @@
+<html>
+
+    <head>
+
+    </head>
+
+    <body>
+
+        <h1>Communication</h1>
+
+        <button id="message">Get Message</button>
+
+        <p id="result"></p>
+
+
+        <script>
+
+            document.getElementById("message").addEventListener('click', async () => {
+                debugger
+                const response = await fetch('/api/message');
+
+                const data = await response.json();
+
+                document.getElementById("result").innerHTML = data.message;
+
+            });
+
+        </script>
+
+    </body>
+
+</html>
